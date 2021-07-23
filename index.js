@@ -26,7 +26,17 @@ const animals = [
  * getTotalCount(animals); //> 28
  * getTotalCount([]); //> 0 // returns 0 if the input array is empty
  */
-function getTotalCount(animals) {}
+function getTotalCount(animals) {
+  //Step 1
+  let totalCount = 0;
+  //Step 2
+  for(let i = 0; i < animals.length; i++){
+    let animalCount = animals[i].count;
+      //Step 3
+      totalCount += animalCount;
+  }
+  return totalCount;
+}
 
 /**
  * FUNCTION DESCRIPTION
@@ -40,7 +50,16 @@ function getTotalCount(animals) {}
  * getAllKinds(animals); //> ["Pig", "Cow", "Chicken", "Horse", "Dog", "Cat"]
  * getAllKinds([]); //> [] // returns empty array if input array is empty
  */
-function getAllKinds(animals) {}
+function getAllKinds(animals) {
+  //step 1
+  let animalKind = [];
+  //step 2
+  for(let i = 0; i < animals.length; i++){
+    //step 3
+    animalKind.push(animals[i].kind);
+  }
+  return animalKind;
+}
 
 /**
  * FUNCTION DESCRIPTION
@@ -59,7 +78,18 @@ function getAllKinds(animals) {}
   ];
  * filterByCountMinimum([], 3); //> [] // returns empty array if input array is empty
  */
-function filterByCountMinimum(animals, minimum) {}
+function filterByCountMinimum(animals, minimum) {
+  //step 1
+  let animalWithMinimum= [];
+  //step 2
+  for(let i = 0; i < animals.length; i++){
+    if(animals[i].count >= minimum){
+       //step 3
+      animalWithMinimum.push(animals[i]);
+    }
+  }
+  return animalWithMinimum;
+}
 
 /**
  * FUNCTION DESCRIPTION
@@ -73,7 +103,20 @@ function filterByCountMinimum(animals, minimum) {}
  * getMostCommonAnimal(animals); //> { kind: "Chicken", count: 11 }
  * getMostCommonAnimal([]); //> null // returns null if the input is empty
  */
-function getMostCommonAnimal(animals) {}
+function getMostCommonAnimal(animals) {
+  //step 1
+  let animalMostCommon = null;
+  let animalCount = 0;
+  //step 2
+  for(let i = 0; i < animals.length; i++){
+    if(animals[i].count > animalCount){
+    //step 3
+      animalCount = animals[i].count;
+      animalMostCommon = animals[i];
+    } 
+  }
+  return animalMostCommon;
+}
 
 // Do not change anything below this line.
 module.exports = {
